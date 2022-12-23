@@ -1,0 +1,13 @@
+//변경 사항 저장시에 코드 스타일 통일하도록 셋팅하기 vs.code에 만들기
+
+//Prettier - Code formatter (설정관련 코드)
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  
