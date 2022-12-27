@@ -1,21 +1,29 @@
-// object
+// function
+function sayHello(nameOfPerson, age) {
+  console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
+}
+
+sayHello("Nico", 10);
+sayHello("Dal", 23);
+sayHello("Yeto", 36);
+
+// 다른 예제
+function plus(firstNumber, secondNumber) {
+  console.log(firstNumber + secondNumber);
+}
+plus(13, 24);
+function divide(a, b) {
+  console.log(a / b);
+}
+divide(20, 4);
+
+// object 안 function
 const player = {
   name: "nico",
-  point: 10,
-  fat: true,
+  sayHi: function (otherPersonName) {
+    console.log("Hi " + otherPersonName + " nice to meet you!");
+  },
 };
-
-console.log(player);
-
-// object 불러올 때 방법 두가지
 console.log(player.name);
-console.log(player["name"]);
-
-// 중간에 값을 변경할 수도 있음 / 업데이트 가능
-player.fat = false;
-player.point = player.point + 15;
-console.log(player);
-
-// 내용 추가도 가능
-player.lastName = "potato";
-console.log(player);
+player.sayHi("lynn");
+player.sayHi("gywjd");
