@@ -27,3 +27,45 @@ const player = {
 console.log(player.name);
 player.sayHi("lynn");
 player.sayHi("gywjd");
+
+// 다른 예제
+const calculator = {
+  add: function (a, b) {
+    console.log(a + b);
+  },
+  subtract: function (a, b) {
+    console.log(a - b);
+  },
+  multiply: function (a, b) {
+    console.log(a * b);
+  },
+  divide: function (a, b) {
+    console.log(a / b);
+  },
+  powerOf: function (a, b) {
+    console.log(a ** b);
+  },
+};
+calculator.add(5, 1);
+calculator.subtract(4, 2);
+calculator.multiply(5, 2);
+calculator.divide(6, 2);
+calculator.powerOf(2, 5);
+
+/*
+익명함수 예시 3가지
+
+object 내 value로 함수 할당
+const a = {
+  add: function(a,b){
+    console.log();
+  }
+}
+
+변수에 함수 할당
+const a = function() {}
+a();
+
+즉시실행
+(function() {console.log(1)})();
+*/
