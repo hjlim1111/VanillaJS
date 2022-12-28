@@ -31,27 +31,32 @@ player.sayHi("gywjd");
 // 다른 예제
 const calculator = {
   add: function (a, b) {
-    console.log(a + b);
+    return a + b;
   },
   subtract: function (a, b) {
-    console.log(a - b);
+    return a - b;
   },
   multiply: function (a, b) {
-    console.log(a * b);
+    return a * b;
   },
   divide: function (a, b) {
-    console.log(a / b);
+    return a / b;
   },
   powerOf: function (a, b) {
-    console.log(a ** b);
+    return a ** b;
   },
 };
-calculator.add(5, 1);
-calculator.subtract(4, 2);
-calculator.multiply(5, 2);
-calculator.divide(6, 2);
-calculator.powerOf(2, 5);
+const addResult = calculator.add(2, 3);
 
+const subtractResult = calculator.subtract(addResult, 10);
+
+const multiplyResult = calculator.multiply(10, subtractResult);
+
+const divideResult = calculator.divide(multiplyResult, addResult);
+
+const powerOfResult = calculator.powerOf(divideResult, subtractResult);
+
+console.log(calculator.add(5, 1));
 /*
 익명함수 예시 3가지
 
@@ -69,3 +74,15 @@ a();
 즉시실행
 (function() {console.log(1)})();
 */
+
+// function return
+// return => 결과값을 내보내고 싶을 때
+// 무언가를 return하게 된다면 계산을 담당하는 function의 코드는 function이 return하는 값과 같아짐
+// return을 하게 된다면 return하는 순간 function을 종료함
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+  return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
