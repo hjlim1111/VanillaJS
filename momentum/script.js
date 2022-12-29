@@ -26,10 +26,15 @@ const title2 = document.querySelector(".hello h1");
 title2.innerText = "wow";
 title2.style.color = "red";
 
+//------------------------------------------------------------
 function handleTitleClick() {
   console.log("title was clicked!");
 }
-title2.addEventListener("click", handleTitleClick);
+//title2.addEventListener("click", handleTitleClick);
+// 위 아래 모두 동일하게 작동 (작성방법의 차이)
+// 위 방법으로 하면 나중에 remove를 통해서 쉽게 지울 수 있음
+title2.onclick = handleTitleClick;
+//------------------------------------------------------------
 
 function handleMouseEnter() {
   title2.innerText = "Mouse is here!";
@@ -40,3 +45,23 @@ function handleMouseLeave() {
   title2.innerText = "Mouse is gone!";
 }
 title2.addEventListener("mouseleave", handleMouseLeave);
+
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
+window.addEventListener("resize", handleWindowResize);
+
+function handleWindowCopy() {
+  alert("copier");
+}
+window.addEventListener("copy", handleWindowCopy);
+
+function handleWindowOffLine() {
+  alert("SOS no WIFI");
+}
+window.addEventListener("offline", handleWindowOffLine);
+
+function handleWindowOnLine() {
+  alert("ALL GOOD");
+}
+window.addEventListener("online", handleWindowOnLine);
