@@ -1,88 +1,62 @@
-// function
-function sayHello(nameOfPerson, age) {
-  console.log("Hello my name is " + nameOfPerson + " and I'm " + age);
-}
-
-sayHello("Nico", 10);
-sayHello("Dal", 23);
-sayHello("Yeto", 36);
-
-// 다른 예제
-function plus(firstNumber, secondNumber) {
-  console.log(firstNumber + secondNumber);
-}
-plus(13, 24);
-function divide(a, b) {
-  console.log(a / b);
-}
-divide(20, 4);
-
-// object 안 function
-const player = {
-  name: "nico",
-  sayHi: function (otherPersonName) {
-    console.log("Hi " + otherPersonName + " nice to meet you!");
-  },
-};
-console.log(player.name);
-player.sayHi("lynn");
-player.sayHi("gywjd");
-
-// 다른 예제
-const calculator = {
-  add: function (a, b) {
-    return a + b;
-  },
-  subtract: function (a, b) {
-    return a - b;
-  },
-  multiply: function (a, b) {
-    return a * b;
-  },
-  divide: function (a, b) {
-    return a / b;
-  },
-  powerOf: function (a, b) {
-    return a ** b;
-  },
-};
-const addResult = calculator.add(2, 3);
-
-const subtractResult = calculator.subtract(addResult, 10);
-
-const multiplyResult = calculator.multiply(10, subtractResult);
-
-const divideResult = calculator.divide(multiplyResult, addResult);
-
-const powerOfResult = calculator.powerOf(divideResult, subtractResult);
-
-console.log(calculator.add(5, 1));
+// 조건문
+//conditional
 /*
-익명함수 예시 3가지
+const age = prompt("How old are you?");
 
-object 내 value로 함수 할당
-const a = {
-  add: function(a,b){
-    console.log();
-  }
-}
-
-변수에 함수 할당
-const a = function() {}
-a();
-
-즉시실행
-(function() {console.log(1)})();
+console.log(age, parseInt(age));
 */
 
-// function return
-// return => 결과값을 내보내고 싶을 때
-// 무언가를 return하게 된다면 계산을 담당하는 function의 코드는 function이 return하는 값과 같아짐
-// return을 하게 된다면 return하는 순간 function을 종료함
-const age = 96;
-function calculateKrAge(ageOfForeigner) {
-  return ageOfForeigner + 2;
-}
+// string -> number로 변환하는 법 => parseInt
+/*
+const age2 = parseInt(prompt("How old are you?"));
+console.log(age2);
+*/
 
-const krAge = calculateKrAge(age);
-console.log(krAge);
+//if 조건문(condition)
+const age3 = parseInt(prompt("How old are you?"));
+console.log(isNaN(age3));
+
+/*
+// condition 안에는 boolean만 들어올 수 있음. true or false
+if (condition) {
+  /// condition === true
+} else {
+  /// condition === false
+}
+*/
+
+// 조건문 if else
+/*
+if (isNaN(age3)) {
+  console.log("Please write a number");
+} else {
+  console.log("Thank you for writing your age.");
+}
+*/
+
+// 조건문 else if
+// AND OR 연산자
+if (isNaN(age3) || age3 < 0) {
+  console.log("Please write a real positive number");
+} else if (age3 < 18) {
+  console.log("You are too young.");
+} else if (age3 >= 18 && age3 <= 50) {
+  console.log("You can drink");
+} else if (age3 > 50 && age3 <= 80) {
+  console.log("You should exercise");
+} else if (age3 === 100) {
+  console.log("wow you are wise");
+} else if (age3 > 80) {
+  console.log("You can do whatever you want.");
+}
+/*
+true || true === true
+false || true === true
+true || false === true
+false || false === false
+
+true && true === true
+false && true === false
+true && false === false
+false && false === false
+*/
