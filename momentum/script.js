@@ -1,62 +1,42 @@
-// 조건문
-//conditional
-/*
-const age = prompt("How old are you?");
+// element를 더 자세히 보여주는 console.dir()
+// console.dir(title);
 
-console.log(age, parseInt(age));
-*/
+/* 많이 사용하지는 않지만 id를 가져오는 방법
+const title = document.getElementById("title");
 
-// string -> number로 변환하는 법 => parseInt
-/*
-const age2 = parseInt(prompt("How old are you?"));
-console.log(age2);
-*/
+title.innerText = "Got you";
 
-//if 조건문(condition)
-const age3 = parseInt(prompt("How old are you?"));
-console.log(isNaN(age3));
+//console.log(title.id);
+//console.log(title.className);
 
-/*
-// condition 안에는 boolean만 들어올 수 있음. true or false
-if (condition) {
-  /// condition === true
-} else {
-  /// condition === false
+ */
+
+/* class로 가져오는 방법 */
+const hellos = document.getElementsByClassName("hello");
+console.log(hellos);
+
+const title = document.getElementsByTagName("h1");
+// Tag로 element를 가지고 올 수 있다. tag는 anchor, div, section, button을 의미
+
+/* 가장 멋진 방법 */
+//querySelector, querySelectorAll
+// 가장 첫번째만 불러옴 (동일 조건으로 값이 있어도), 여러가지를 가지고 오고 싶으면 querySelectorAll사용하기
+const title2 = document.querySelector(".hello h1");
+
+title2.innerText = "wow";
+title2.style.color = "red";
+
+function handleTitleClick() {
+  console.log("title was clicked!");
 }
-*/
+title2.addEventListener("click", handleTitleClick);
 
-// 조건문 if else
-/*
-if (isNaN(age3)) {
-  console.log("Please write a number");
-} else {
-  console.log("Thank you for writing your age.");
+function handleMouseEnter() {
+  title2.innerText = "Mouse is here!";
 }
-*/
+title2.addEventListener("mouseenter", handleMouseEnter);
 
-// 조건문 else if
-// AND OR 연산자
-if (isNaN(age3) || age3 < 0) {
-  console.log("Please write a real positive number");
-} else if (age3 < 18) {
-  console.log("You are too young.");
-} else if (age3 >= 18 && age3 <= 50) {
-  console.log("You can drink");
-} else if (age3 > 50 && age3 <= 80) {
-  console.log("You should exercise");
-} else if (age3 === 100) {
-  console.log("wow you are wise");
-} else if (age3 > 80) {
-  console.log("You can do whatever you want.");
+function handleMouseLeave() {
+  title2.innerText = "Mouse is gone!";
 }
-/*
-true || true === true
-false || true === true
-true || false === true
-false || false === false
-
-true && true === true
-false && true === false
-true && false === false
-false && false === false
-*/
+title2.addEventListener("mouseleave", handleMouseLeave);
