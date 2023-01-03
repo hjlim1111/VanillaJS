@@ -1,14 +1,12 @@
 const test = document.querySelector("div.hello h1");
 
 function handleTitleClick() {
-  const currentColor = test.style.color;
-  let newColor;
-  if (currentColor === "blue") {
-    newColor = "tomato";
+  const clickedClass = "active";
+  if (test.className === clickedClass) {
+    test.className = "";
   } else {
-    newColor = "blue";
+    test.className = clickedClass;
   }
-  test.style.color = newColor;
 }
 
 test.addEventListener("click", handleTitleClick);
