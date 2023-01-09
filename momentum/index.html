@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <form id="login-form">
+      <!--
+        required : input 필수항목
+        maxlength : input 자체적으로 최대 글자수 15로 조절가능
+
+        이 기능을 사용하기 위해서는 input이 form안에 있어야 가능
+      -->
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <button>Log In</button>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>
