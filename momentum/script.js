@@ -11,6 +11,9 @@ function onLoginSubmit(event) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const userName = loginInput.value;
 
+  localStorage.setItem("username", userName);
+  // 앞 key는 저장될 아이템의 이름, 뒤 value는 변수이름이다
+
   greeting.innerHTML = `Hello ${userName}`;
   // greeting.innerHTML = "Hello " + userName; 위와 동일한 코드
   // '' 와 "" 이 아닌 ``(백틱)을 사용해야 함
@@ -21,5 +24,10 @@ function onLoginSubmit(event) {
 loginForm.addEventListener("submit", onLoginSubmit);
 
 // 배운 내용
-// 백틱을 사용하여 변수와 string 결합 방법 새로운 방법을 알게 됨 ``, ${변수명} 규칙이 있음
-// class hidden을 사용하여 input을 숨겼다가 h1을 보이게 하는 방법 등을 할 수 있음
+/*
+localstorage : 새로고침해도 입력받은 혹은 저장한 값이 유지되게 하는 것
+
+localStorage.setItem("이름(Key)","저장할 내용(Value)") : 값을 저장하는 법
+localStorage.getItem("이름(Key)") : 값을 불러오는 법
+localStorage.removeItem("이름(Key)") : 저장한 값을 지우는 법
+*/
