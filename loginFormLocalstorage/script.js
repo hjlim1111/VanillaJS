@@ -17,15 +17,14 @@ function onLoginSubmit(event) {
   // event object를 argument로 줌
   event.preventDefault(); // 어떤 event의 기본 행동(브라우저가 기본적으로 수행하는 동작)이든 발생되지 않도록 막는 function
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  const userName = loginInput.value;
-
-  localStorage.setItem(USERNAME_KEY, userName);
+  localStorage.setItem(USERNAME_KEY, loginInput.value);
   // 앞 key는 저장될 아이템의 이름, 뒤 value는 변수이름이다
 
-  paintGreetings(userName);
+  paintGreetings();
 }
 
-function paintGreetings(username) {
+function paintGreetings() {
+  const userName = localStorage.getItem(USERNAME_KEY);
   greeting.innerHTML = `Hello ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -38,5 +37,5 @@ if (savedUsername === null) {
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
   //show the greetings
-  paintGreetings(savedUsername);
+  paintGreetings();
 }
