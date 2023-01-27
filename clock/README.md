@@ -1,4 +1,0 @@
-# VanillaJS
-
-<br>
-<br>
